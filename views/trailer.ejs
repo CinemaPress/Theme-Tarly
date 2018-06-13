@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="<%- page.language %>" prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+
+<body>
+
+<% include includes/header.ejs %>
+
+<div id="main" class="watch">
+    <div class="container">
+        <div id="padding-expand"></div>
+
+        <div id="main-content">
+
+            <% if (typeof page.adv === 'object' && page.adv.top) { %>
+            <div style="text-align: center; margin: 10px auto">
+                <%- page.adv.top %>
+            </div>
+            <% } %>
+
+            <div class="goblock play-film">
+                <div class="gobread">
+                    <ol class="breadcrumb">
+                        <li><a href="/">Главная</a></li>
+                        <% if (movie.genre_url) { %><li><%- movie.genre_url %></li><% } %>
+                        <% if (movie.url) { %><li><a href="<%- movie.url %>"><%- movie.title %></a></li><% } %>
+                        <li class="active">Трейлер</li>
+                    </ol>
+                </div>
+                <div class="goblock-content go-full">
+                    <% if (typeof page.adv === 'object' && page.adv.over) { %>
+                    <div style="text-align: center; margin: 10px auto">
+                        <%- page.adv.over %>
+                    </div>
+                    <% } %>
+                    <div id="media-play">
+                        <div style="width: 100%; height: 370px; border-radius: 3px 3px 0 0; overflow: hidden; position: relative">
+                            <%- page.player %>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="goblock-bottom gocontrol">
+                        <a href="<%- movie.url %>" class="gc-icon gc-trailer"><i class="icon-info mr5"></i>Описание</a>
+                        <% if (page.urls.movies.online) { %>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="gc-icon gc-trailer"><i class="icon-play mr5"></i>Онлайн</a>
+                        <% } %>
+                        <% if (page.urls.movies.download) { %>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="gc-icon gc-trailer"><i class="icon-download mr5"></i>Скачать</a>
+                        <% } %>
+                        <% if (page.urls.movies.trailer) { %>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="gc-icon"><i class="icon-video mr5"></i>Трейлер</a>
+                        <% } %>
+                        <% if (page.urls.movies.picture) { %>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="gc-icon gc-trailer"><i class="icon-gallery mr5"></i>Кадры</a>
+                        <% } %>
+                        <div class="clearfix"></div>
+                    </div>
+                    <% if (typeof page.adv === 'object' && page.adv.under) { %>
+                    <div style="text-align: center; margin: 10px auto">
+                        <%- page.adv.under %>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="goblock detail-film">
+                <div class="goblock-content go-full">
+                    <div class="detail-content">
+                        <div class="dc-thumb">
+                            <img src="<%- movie.poster %>" title="<%- movie.title %>" alt="<%- movie.title %>">
+                        </div>
+                        <div class="dc-info">
+                            <h1 class="dc-title"><%- movie.title %> трейлер</h1>
+                            <div class="dci-spe">
+                                <div class="dci-spe-left">
+                                    <% if (movie.genres_url) { %>
+                                    <div class="dcis dcis-01">Жанры: <%- movie.genres_url %></div>
+                                    <% } %>
+                                    <% if (movie.actors_url) { %>
+                                    <div class="dcis dcis-02">Актеры: <%- movie.actors_url %></div>
+                                    <% } %>
+                                    <% if (movie.directors_url) { %>
+                                    <div class="dcis dcis-03">Режиссер: <%- movie.directors_url %></div>
+                                    <% } %>
+                                    <% if (movie.countries_url) { %>
+                                    <div class="dcis dcis-04">Страна: <%- movie.countries_url %></div>
+                                    <% } %>
+                                </div>
+                                <div class="dci-spe-right">
+                                    <% if (movie.quality) { %>
+                                    <div class="dcis dcis-02">Качество: <span class="badge"><%- movie.quality %></span></div>
+                                    <% } %>
+                                    <% if (movie.translate) { %>
+                                    <div class="dcis dcis-02">Перевод: <span class="badge"><%- movie.translate %></span></div>
+                                    <% } %>
+                                    <% if (movie.premiere) { %>
+                                    <div class="dcis dcis-03">Премьера: <%- movie.premiere %></div>
+                                    <% } %>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <% if (page.seo) { %>
+                            <div class="dci-desc">
+                                <%- page.seo %>
+                            </div>
+                            <% } %>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="dc-right">
+                            <% if (movie.kp_rating) { %>
+                            <div class="dcr-rating">
+                                <strong>КиноПоиск</strong> <strong><%- movie.kp_rating/10 %></strong> (<%- movie.kp_vote %>)
+                                <div class="dcrrkp">
+                                    <% for (var i = 1; i <= Math.round(movie.kp_rating/20); i++) { %>
+                                    <span class="fa fa-star"></span>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <% } %>
+                            <% if (movie.imdb_rating) { %>
+                            <div class="dcr-rating">
+                                <strong>IMDb</strong> <strong><%- movie.imdb_rating/10 %></strong> (<%- movie.imdb_vote %>)
+                                <div class="dcrrimdb">
+                                    <% for (var i = 1; i <= Math.round(movie.imdb_rating/20); i++) { %>
+                                    <span class="fa fa-star"></span>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="episodesListBlock goblock-bottom" style="display: none;">
+                        <div style="margin: 10px auto;">
+                            <h3><%= movie.title %> новые серии</h3>
+                            <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                        </div>
+                    </div>
+
+                    <% if (typeof contents === 'object' && contents.length) { %>
+                    <div class="clearfix"></div>
+                    <% contents.forEach(function (content) { %>
+                    <div style="float: left; width: 50%;">
+                        <div style="margin: 0; padding: 10px">
+                            <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+                                <div class="cinemapress-news-title">
+                                    <%= content.title %>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+                    <div class="clearfix"></div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div id="comments" class="goblock comments">
+                <div class="goblock-content">
+                    <% if (page.comments) { %>
+                    <div>
+                        <%- page.comments %>
+                    </div>
+                    <% } %>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <% if (typeof movies === 'object') {
+                    for (var type in movies) {
+            if (movies.hasOwnProperty(type) && movies[type].length) {
+            movies[type].forEach(function (category) { %>
+            <div class="goblock related-list">
+                <div class="goblock-header">
+                    <div class="gh-title"><%- category.name %></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="goblock-content filter-result">
+                    <ul class="ulclear grid-item grid-item-featured"><% if (category.movies.length) {
+                        category.movies.forEach(function (movie) { %><li>
+                            <a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)" class="thumb">
+                                <div class="gi-play"><i class="icon-play"></i></div>
+                                <% if (movie.quality) { %>
+                                <div class="gr-quality"><%- movie.quality %></div>
+                                <% } %>
+                                <img src="<%- movie.poster %>" title="<%= movie.title %> (<%- movie.year %>)" alt="<%= movie.title %> (<%- movie.year %>)">
+                            </a>
+                            <div class="item-detail">
+                                <h2 class="item-title"><a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"><%= movie.title %></a></h2>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li><% }); } %></ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <% }); } } } %>
+
+            <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
+            <div style="text-align: center; margin: 10px auto">
+                <%- page.adv.bottom %>
+            </div>
+            <% } %>
+
+        </div>
+
+        <% include includes/right.ejs %>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<% include includes/footer.ejs %>
+
+</body>
+</html>

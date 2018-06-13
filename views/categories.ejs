@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="<%- page.language %>">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+
+<body>
+
+<% include includes/header.ejs %>
+
+<div id="main" class="category">
+    <div class="container">
+
+        <div id="main-content">
+
+            <% if (typeof page.adv === 'object' && page.adv.top) { %>
+            <div style="text-align: center; margin: 10px auto">
+                <%- page.adv.top %>
+            </div>
+            <% } %>
+
+            <div style="margin: 10px auto; text-align: center">
+                <h1><%= page.title %></h1>
+            </div>
+
+            <% if (page.seo) { %>
+            <div class="goblock">
+                <div class="goblock-bottom">
+                    <%- page.seo %>
+                </div>
+            </div>
+            <% } %>
+
+            <% if (typeof categories === 'object' && categories.length) { %>
+            <div class="clearfix"></div>
+            <% categories.forEach(function (content) { %>
+            <div style="float: left; width: 50%;">
+                <div style="margin: 0; padding: 10px">
+                    <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+                        <div class="cinemapress-news-title">
+                            <%= content.title %>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <% }); %>
+            <div class="clearfix"></div>
+            <% } %>
+
+            <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
+            <div style="text-align: center; margin: 10px auto">
+                <%- page.adv.bottom %>
+            </div>
+            <% } %>
+
+        </div>
+
+        <% include includes/right.ejs %>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<% include includes/footer.ejs %>
+
+</body>
+</html>

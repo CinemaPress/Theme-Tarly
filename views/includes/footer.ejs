@@ -1,0 +1,46 @@
+<div id="footer">
+    <div class="footer-menu">
+        <div class="container">
+            <a href="/<%- page.urls.year %>" class="fm-link">Все годы</a>
+            <span class="space">-</span>
+            <a href="/<%- page.urls.genre %>" class="fm-link">Все жанры</a>
+            <span class="space">-</span>
+            <a href="/<%- page.urls.country %>" class="fm-link">Все страны</a>
+            <span class="space">-</span>
+            <a href="/<%- page.urls.actor %>" class="fm-link">Все актеры</a>
+            <span class="space">-</span>
+            <a href="/<%- page.urls.director %>" class="fm-link">Все режиссеры</a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="footer-content">
+        <div class="container">
+            <div class="copyright">
+                <div class="recentlyViewedBlock" style="display: none; margin: 20px auto">
+                    <div>Вы надавно смотрели:</div>
+                    <div id="recentlyViewed"></div>
+                </div>
+                <div class="footer-logo"><img src="/themes/tarly/public/images/logo-footer.png" title="" alt=""></div>
+                <div class="txt">
+                    <span> &copy;&nbsp;<%- new Date().getFullYear() %>&nbsp;<a href="https://cinemapress.org" target="_blank">CinemaPress&nbsp;ACMS</a></span>
+                    <p><span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
+                    </p>
+                </div>
+                <% if (page.social) { %>
+                <div class="footer-follow">
+                    <% if (page.social.vk) { %><a href="<%- page.social.vk %>" target="_blank"><i class="fa fa-vk"></i></a><% } %>
+                    <% if (page.social.facebook) { %><span> </span><a href="<%- page.social.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a><% } %>
+                    <% if (page.social.twitter) { %><span> </span><a href="<%- page.social.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a><% } %>
+                    <% if (page.social.gplus) { %><span> </span><a href="<%- page.social.gplus %>" target="_blank"><i class="fa fa-google-plus"></i></a><% } %>
+                    <% if (page.social.youtube) { %><span> </span><a href="<%- page.social.youtube %>" target="_blank"><i class="fa fa-youtube"></i></a><% } %>
+                    <% if (page.social.instagram) { %><span> </span><a href="<%- page.social.instagram %>" target="_blank"><i class="fa fa-instagram"></i></a><% } %>
+                </div>
+                <% } %>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/themes/tarly/public/js/all.js"></script>
+<%- page.codes.footer %>

@@ -1,0 +1,71 @@
+<div id="header">
+    <div class="container">
+
+        <div id="m-menu"><i class="icon-menu"></i></div>
+        <div id="m-search"><i class="icon-search"></i></div>
+
+        <a href="/" id="logo" title="Logo"><img src="/themes/tarly/public/images/logo.png" title="Logo" alt="Logo"></a>
+
+        <form id="search" action="/<%- page.urls.search %>/title">
+            <div class="search-content">
+                <input maxlength="50" autocomplete="off" type="text" class="form-control search-input" name="q" placeholder="Поиск...">
+                <button type="submit" class="search-submit" title="Поиск"><i class="icon-search"></i></button>
+                <div style="display: none;" class="search-suggest"></div>
+            </div>
+        </form>
+
+        <div id="login-status" class="continueViewingBlock" style="display: none;">
+            <div id="header-login" class="guest">
+                <a href="javascript:void(0)" class="btn btn-sm btn-login" id="continueViewing"><i class="icon-play mr5"></i>На чем остановились?</a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div id="menu">
+    <div class="container">
+        <ul class="top-menu">
+            <li><a href="/" title="Главная">Главная</a></li>
+            <li>
+                <a href="javascript:void(0)" title="Годы">Годы</a>
+                <div class="sub-container" style="display: none;">
+                    <ul class="sub-menu">
+                        <% page.urls.years.forEach(function(year) { %>
+                        <li><a href="<%- year.url %>"><%- year.title %></a></li>
+                        <% }); %>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" title="Жанры">Жанры</a>
+                <div class="sub-container" style="display: none;">
+                    <ul class="sub-menu">
+                        <% page.urls.genres.forEach(function(genre) { %>
+                        <li><a href="<%- genre.url %>"><%- genre.title %></a></li>
+                        <% }); %>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" title="Страны">Страны</a>
+                <div class="sub-container" style="display: none;">
+                    <ul class="sub-menu">
+                        <% page.urls.countries.forEach(function(country) { %>
+                        <li><a href="<%- country.url %>"><%- country.title %></a></li>
+                        <% }); %>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" title="Фильмы">Фильмы</a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>" title="Сериалы">Сериалы</a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>" title="Мультфильмы">Мультфильмы</a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" title="ТВ-передачи">ТВ-передачи</a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>" title="Аниме">Аниме</a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>

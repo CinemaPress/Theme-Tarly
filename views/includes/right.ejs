@@ -1,0 +1,115 @@
+<div id="sidebar">
+    <div class="goblock sb-likeshare">
+        <div class="goblock-content">
+            <span class="block">Поделитесь с друзьями</span>
+            <div class="sbl-btn">
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','vk')" class="btn btn-radius sbl-vk"><i class="fa fa-vk mr10"></i>Рассказать</a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','facebook')" class="btn btn-radius sbl-fb mr5"><i class="fa fa-facebook mr10"></i>Поделиться</a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','twitter')" class="btn btn-radius sbl-tw"><i class="fa fa-twitter mr10"></i>Твитнуть</a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','google')" class="btn btn-radius sbl-gp"><i class="fa fa-google-plus mr10"></i>+1</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <% if (typeof top === 'object' && top.length) { %>
+    <div class="goblock sb-requested">
+        <div class="goblock-content go-full">
+            <ul class="ulclear list-item sb-list-item sb-list-request">
+                <% top.forEach(function (movie) { %>
+                <li>
+                    <a href="<%- movie.url %>" title="<%= movie.title %>" class="thumb"><img src="<%- movie.poster %>" title="<%= movie.title %>" alt="<%= movie.title %>"></a>
+                    <div class="item-detail">
+                        <h2 class="item-title"><a href="<%- movie.url %>" title="<%= movie.title %>"><%- movie.title %></a></h2>
+                        <div class="item-oinfo"><%- movie.genre %> <span class="dot"></span> <%- movie.year %></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <% }); %>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <% } %>
+
+    <% if (typeof soon === 'object' && soon.length) { %>
+    <div class="goblock sb-watched">
+        <div class="goblock-header">
+            <div class="gh-title">Скоро премьеры</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="goblock-content sbw-content">
+            <ul class="ulclear list-item sb-list-item watched-list" style="overflow: hidden;">
+                <% soon.forEach(function (movie) { %>
+                <li>
+                    <div class="block sbw-show">
+                        <a href="<%- movie.url %>" title="<%= movie.title %>" class="thumb">
+                            <img src="<%- movie.poster_min %>" title="<%= movie.title %>" alt="<%= movie.title %>">
+                        </a>
+                        <div class="item-detail">
+                            <h2 class="item-title"><a href="<%- movie.url %>" title="<%= movie.title %>"><%- movie.title %></a></h2>
+                            <div class="item-oinfo"><%- movie.premiere %> <span class="dot"></span> <%- movie.genre %></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <% } %>
+
+    <% if (typeof news === 'object' && news.length) { %>
+    <% news.forEach(function (content) { %>
+    <div>
+        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+            <div class="cinemapress-news-title">
+                <%= content.title %>
+            </div>
+        </a>
+    </div>
+    <% }); %>
+    <% } %>
+
+    <% if (typeof page.adv === 'object' && page.adv.right) { %>
+    <div style="text-align: center; margin: 0 auto">
+        <%- page.adv.right %>
+    </div>
+    <% } %>
+
+    <% if (typeof recent === 'object' && recent.length) { %>
+    <% recent.forEach(function (comment) { %>
+    <div>
+        <div class="cinemapress-recent">
+            <div class="cinemapress-recent-head">
+                <% if (comment.avatar) { %>
+                <div class="cinemapress-recent-head-avatar">
+                    <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+                </div>
+                <% } %>
+                <div class="cinemapress-recent-head-meta">
+                    <div>
+                        <a href="<%- comment.url %>"><%= comment.title %></a>
+                    </div>
+                    <div>
+                        <span>
+                            <%- comment.user %>
+                        </span><span>
+                            сказал(а)
+                        </span><span>
+                            <%- comment.date %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="cinemapress-recent-comment">
+                <%- comment.comment %>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+    <% } %>
+
+</div>
+<div class="clearfix"></div>
