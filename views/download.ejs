@@ -115,7 +115,7 @@
                             <div class="dcr-rating">
                                 <strong>КиноПоиск</strong> <strong><%- movie.kp_rating/10 %></strong> (<%- movie.kp_vote %>)
                                 <div class="dcrrkp">
-                                    <% for (var i = 1; i <= Math.round(movie.kp_rating/20); i++) { %>
+                                    <% for (var i = 1; i <= Math.round(movie.kp_rating/10); i++) { %>
                                     <span class="fa fa-star"></span>
                                     <% } %>
                                 </div>
@@ -125,7 +125,7 @@
                             <div class="dcr-rating">
                                 <strong>IMDb</strong> <strong><%- movie.imdb_rating/10 %></strong> (<%- movie.imdb_vote %>)
                                 <div class="dcrrimdb">
-                                    <% for (var i = 1; i <= Math.round(movie.imdb_rating/20); i++) { %>
+                                    <% for (var i = 1; i <= Math.round(movie.imdb_rating/10); i++) { %>
                                     <span class="fa fa-star"></span>
                                     <% } %>
                                 </div>
