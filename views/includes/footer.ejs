@@ -1,15 +1,15 @@
 <div id="footer">
     <div class="footer-menu">
         <div class="container">
-            <a href="/<%- page.urls.year %>" class="fm-link">Все годы</a>
+            <a href="/<%- page.urls.year %>" class="fm-link"><%- page.l.allYears %></a>
             <span class="space">-</span>
-            <a href="/<%- page.urls.genre %>" class="fm-link">Все жанры</a>
+            <a href="/<%- page.urls.genre %>" class="fm-link"><%- page.l.allGenres %></a>
             <span class="space">-</span>
-            <a href="/<%- page.urls.country %>" class="fm-link">Все страны</a>
+            <a href="/<%- page.urls.country %>" class="fm-link"><%- page.l.allCountries %></a>
             <span class="space">-</span>
-            <a href="/<%- page.urls.actor %>" class="fm-link">Все актеры</a>
+            <a href="/<%- page.urls.actor %>" class="fm-link"><%- page.l.allActors %></a>
             <span class="space">-</span>
-            <a href="/<%- page.urls.director %>" class="fm-link">Все режиссеры</a>
+            <a href="/<%- page.urls.director %>" class="fm-link"><%- page.l.allDirectors %></a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="copyright">
                 <div class="recentlyViewedBlock" style="display: none; margin: 20px auto">
-                    <div>Вы надавно смотрели:</div>
+                    <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
                 <div class="footer-logo"><img src="/themes/tarly/public/images/logo-footer.png" title="" alt=""></div>

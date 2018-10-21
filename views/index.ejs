@@ -23,7 +23,7 @@
                         <div class="slide-caption">
                             <p class="sc-name"><%= movie.title %></p>
                             <p class="sc-info"><span><%- movie.country_url %></span> <span><%- movie.genre_url %></span> <span><%- movie.year_url %></span> </p>
-                            <a href="<%- movie.url %>" class="btn btn-go"><i class="icon-play mr10"></i>Подробнее</a>
+                            <a href="<%- movie.url %>" class="btn btn-go"><i class="icon-play mr10"></i><%- page.l.more %></a>
                         </div>
                     </div>
                     <% }); %>
@@ -72,7 +72,7 @@
                             </a>
                             <div class="item-detail">
                                 <h2 class="item-title">
-                                    <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия<% } else { %><%- movie.year %><% } %>)</a>
+                                    <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a>
                                 </h2>
                             </div>
                             <div class="clearfix"></div>
@@ -127,6 +127,7 @@
             <% if (page.seo) { %>
             <div class="goblock">
                 <div class="goblock-bottom">
+                    <h1><%- page.h1 %></h1>
                     <%- page.seo %>
                 </div>
             </div>

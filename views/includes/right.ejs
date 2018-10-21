@@ -1,12 +1,12 @@
 <div id="sidebar">
     <div class="goblock sb-likeshare">
         <div class="goblock-content">
-            <span class="block">Поделитесь с друзьями</span>
+            <span class="block"><%- page.l.share %></span>
             <div class="sbl-btn">
-                <a href="javascript:void(0)" onclick="share('<%- page.url %>','vk')" class="btn btn-radius sbl-vk"><i class="fa fa-vk mr10"></i>Рассказать</a>
-                <a href="javascript:void(0)" onclick="share('<%- page.url %>','facebook')" class="btn btn-radius sbl-fb mr5"><i class="fa fa-facebook mr10"></i>Поделиться</a>
-                <a href="javascript:void(0)" onclick="share('<%- page.url %>','twitter')" class="btn btn-radius sbl-tw"><i class="fa fa-twitter mr10"></i>Твитнуть</a>
-                <a href="javascript:void(0)" onclick="share('<%- page.url %>','google')" class="btn btn-radius sbl-gp"><i class="fa fa-google-plus mr10"></i>+1</a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','vk')" class="btn btn-radius sbl-vk"><i class="fa fa-vk mr10"></i><%- page.l.vk %></a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','facebook')" class="btn btn-radius sbl-fb mr5"><i class="fa fa-facebook mr10"></i><%- page.l.facebook %></a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','twitter')" class="btn btn-radius sbl-tw"><i class="fa fa-twitter mr10"></i><%- page.l.twitter %></a>
+                <a href="javascript:void(0)" onclick="share('<%- page.url %>','google')" class="btn btn-radius sbl-gp"><i class="fa fa-google-plus mr10"></i><%- page.l.google %></a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -35,7 +35,7 @@
     <% if (typeof soon === 'object' && soon.length) { %>
     <div class="goblock sb-watched">
         <div class="goblock-header">
-            <div class="gh-title">Скоро премьеры</div>
+            <div class="gh-title"><%- page.l.soon %></div>
             <div class="clearfix"></div>
         </div>
         <div class="goblock-content sbw-content">
@@ -96,7 +96,7 @@
                         <span>
                             <%- comment.user %>
                         </span><span>
-                            сказал(а)
+                            <%- page.l.said %>
                         </span><span>
                             <%- comment.date %>
                         </span>

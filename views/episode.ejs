@@ -25,10 +25,10 @@
             <div class="goblock play-film">
                 <div class="gobread">
                     <ol class="breadcrumb">
-                        <li><a href="/">Главная</a></li>
+                        <li><a href="/"><%- page.l.home %></a></li>
                         <% if (movie.genre_url) { %><li><%- movie.genre_url %></li><% } %>
                         <% if (movie.url) { %><li><a href="<%- movie.url %>"><%- movie.title %></a></li><% } %>
-                        <li class="active">Серия</li>
+                        <li class="active"><%- page.l.episode %></li>
                     </ol>
                 </div>
                 <div class="goblock-content go-full">
@@ -44,18 +44,18 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="goblock-bottom gocontrol">
-                        <a href="<%- movie.url %>" class="gc-icon gc-trailer"><i class="icon-info mr5"></i>Описание</a>
+                        <a href="<%- movie.url %>" class="gc-icon gc-trailer"><i class="icon-info mr5"></i><%- page.l.information %></a>
                         <% if (page.urls.movies.online) { %>
-                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="gc-icon gc-trailer"><i class="icon-play mr5"></i>Онлайн</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="gc-icon gc-trailer"><i class="icon-play mr5"></i><%- page.l.online %></a>
                         <% } %>
                         <% if (page.urls.movies.download) { %>
-                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="gc-icon gc-trailer"><i class="icon-download mr5"></i>Скачать</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="gc-icon gc-trailer"><i class="icon-download mr5"></i><%- page.l.download %></a>
                         <% } %>
                         <% if (page.urls.movies.trailer) { %>
-                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="gc-icon gc-trailer"><i class="icon-video mr5"></i>Трейлер</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="gc-icon gc-trailer"><i class="icon-video mr5"></i><%- page.l.trailer %></a>
                         <% } %>
                         <% if (page.urls.movies.picture) { %>
-                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="gc-icon gc-trailer"><i class="icon-gallery mr5"></i>Кадры</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="gc-icon gc-trailer"><i class="icon-gallery mr5"></i><%- page.l.picture %></a>
                         <% } %>
                         <div class="clearfix"></div>
                     </div>
@@ -71,34 +71,34 @@
                 <div class="goblock-content go-full">
                     <div class="detail-content">
                         <div class="dc-thumb">
-                            <img src="<%- movie.poster %>" title="<%- movie.title %>" alt="<%- movie.title %>">
+                            <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
                         </div>
                         <div class="dc-info">
-                            <h1 class="dc-title"><%- movie.title %> серия</h1>
+                            <h1 class="dc-title"><%- page.h1 %></h1>
                             <div class="dci-spe">
                                 <div class="dci-spe-left">
                                     <% if (movie.genres_url) { %>
-                                    <div class="dcis dcis-01">Жанры: <%- movie.genres_url %></div>
+                                    <div class="dcis dcis-01"><%- page.l.genres %>: <%- movie.genres_url %></div>
                                     <% } %>
                                     <% if (movie.actors_url) { %>
-                                    <div class="dcis dcis-02">Актеры: <%- movie.actors_url %></div>
+                                    <div class="dcis dcis-02"><%- page.l.actors %>: <%- movie.actors_url %></div>
                                     <% } %>
                                     <% if (movie.directors_url) { %>
-                                    <div class="dcis dcis-03">Режиссер: <%- movie.directors_url %></div>
+                                    <div class="dcis dcis-03"><%- page.l.directors %>: <%- movie.directors_url %></div>
                                     <% } %>
                                     <% if (movie.countries_url) { %>
-                                    <div class="dcis dcis-04">Страна: <%- movie.countries_url %></div>
+                                    <div class="dcis dcis-04"><%- page.l.countries %>: <%- movie.countries_url %></div>
                                     <% } %>
                                 </div>
                                 <div class="dci-spe-right">
                                     <% if (movie.quality) { %>
-                                    <div class="dcis dcis-02">Качество: <span class="badge"><%- movie.quality %></span></div>
+                                    <div class="dcis dcis-02"><%- page.l.quality %>: <span class="badge"><%- movie.quality %></span></div>
                                     <% } %>
                                     <% if (movie.translate) { %>
-                                    <div class="dcis dcis-02">Перевод: <span class="badge"><%- movie.translate %></span></div>
+                                    <div class="dcis dcis-02"><%- page.l.translate %>: <span class="badge"><%- movie.translate %></span></div>
                                     <% } %>
                                     <% if (movie.premiere) { %>
-                                    <div class="dcis dcis-03">Премьера: <%- movie.premiere %></div>
+                                    <div class="dcis dcis-03"><%- page.l.premiere %>: <%- movie.premiere %></div>
                                     <% } %>
                                 </div>
                                 <div class="clearfix"></div>
@@ -111,10 +111,10 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="dc-right">
-                            <a class="btn btn-block btn-fav favorite watchLaterBlock" href="javascript:void(0)" style="display: none;" id="watchLater">Досмотреть позже</a>
+                            <a class="btn btn-block btn-fav favorite watchLaterBlock" href="javascript:void(0)" style="display: none;" id="watchLater"><%- page.l.later %></a>
                             <% if (movie.kp_rating) { %>
                             <div class="dcr-rating">
-                                <strong>КиноПоиск</strong> <strong><%- movie.kp_rating/10 %></strong> (<%- movie.kp_vote %>)
+                                <strong><%- page.l.kp %></strong> <strong><%- movie.kp_rating/10 %></strong> (<%- movie.kp_vote %>)
                                 <div class="dcrrkp">
                                     <% for (var i = 1; i <= Math.round(movie.kp_rating/10); i++) { %>
                                     <span class="fa fa-star"></span>
@@ -124,7 +124,7 @@
                             <% } %>
                             <% if (movie.imdb_rating) { %>
                             <div class="dcr-rating">
-                                <strong>IMDb</strong> <strong><%- movie.imdb_rating/10 %></strong> (<%- movie.imdb_vote %>)
+                                <strong><%- page.l.imdb %></strong> <strong><%- movie.imdb_rating/10 %></strong> (<%- movie.imdb_vote %>)
                                 <div class="dcrrimdb">
                                     <% for (var i = 1; i <= Math.round(movie.imdb_rating/10); i++) { %>
                                     <span class="fa fa-star"></span>
@@ -138,7 +138,7 @@
 
                     <div class="episodesListBlock goblock-bottom" style="display: none;">
                         <div style="margin: 10px auto;">
-                            <h3><%= movie.title %> новые серии</h3>
+                            <h3><%= movie.title %> <%- page.l.episodes %></h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
                     </div>
