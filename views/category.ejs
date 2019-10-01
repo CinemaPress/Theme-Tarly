@@ -48,6 +48,15 @@
                 </div>
                 <% } %>
 
+                <div class="randomMovieCategory">
+                    <div class="cinemapress-random-category"
+                         onclick="window.location.href='<%- page.url %>?random'">
+                        <img src="/themes/tarly/public/images/dice.svg" alt="<%- page.l.random %>">
+                        <span><%- page.l.lucky %></span>
+                        <small><%- page.l.random %></small>
+                    </div>
+                </div>
+
                 <% if (typeof movies === 'object' && movies.length) { %>
                 <div id="filter" class="active">
                     <div class="filter-content row">

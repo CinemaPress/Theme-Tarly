@@ -1,10 +1,10 @@
 # Theme «tarly»
 
-![Theme «tarly» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Tarly/master/screenshot.png "Theme «tarly» for CinemaPress ACMS")
+![Theme «tarly» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tarly/master/screenshot.png "Theme «tarly» for CinemaPress")
 
-:art: Theme «tarly» for CinemaPress ACMS
+:art: Theme «tarly» for CinemaPress
 
-- [Tarly.CinemaPress.org](http://Tarly.CinemaPress.org/)
+- [Tarly.CinemaPress.io](http://Tarly.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Tarly/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Tarly/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-tarly/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Tarly/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```

@@ -6,17 +6,29 @@
 
         <a href="/" id="logo" title="Logo"><img src="/themes/tarly/public/images/logo.png?v=<%- page.ver %>" title="Logo" alt="Logo"></a>
 
-        <form id="search" action="/<%- page.urls.search %>/title">
+        <form id="search" action="/<%- page.urls.search %>">
             <div class="search-content">
-                <input maxlength="50" autocomplete="off" type="text" class="form-control search-input" name="q" placeholder="<%- page.l.search %>...">
+                <input maxlength="50" type="text" class="form-control search-input" name="q" placeholder="<%- page.l.search %>..." data-autocomplete="desktop">
                 <button type="submit" class="search-submit" title="<%- page.l.search %>"><i class="icon-search"></i></button>
                 <div style="display: none;" class="search-suggest"></div>
+                <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
             </div>
         </form>
 
-        <div id="login-status" class="continueViewingBlock" style="display: none;">
-            <div id="header-login" class="guest">
+        <div class="login-status continueViewingBlock" style="display: none;">
+            <div class="header-login guest">
                 <a href="javascript:void(0)" class="btn btn-sm btn-login" id="continueViewing"><i class="icon-play mr5"></i><%- page.l.continue %>?</a>
+            </div>
+        </div>
+
+        <div class="randomMovieMenu">
+            <div class="login-status">
+                <div class="header-login guest cinemapress-random-menu">
+                    <a href="/?random" class="btn btn-sm btn-login">
+                        <img src="/themes/tarly/public/images/dice.svg" alt="<%- page.l.lucky %>">
+                        <%- page.l.lucky %>
+                    </a>
+                </div>
             </div>
         </div>
 

@@ -40,7 +40,7 @@
                     <div id="media-play">
                         <div id="cinemapress-player" style="border-radius: 3px 3px 0 0;">
                             <% if (page.player) { %>
-                            <%- page.player %>
+                                <%- page.player %>
                             <% } %>
                         </div>
                         <div class="clearfix"></div>
@@ -182,7 +182,16 @@
             movies[type].forEach(function (category) { %>
             <div class="goblock related-list">
                 <div class="goblock-header">
-                    <div class="gh-title"><%- category.name %></div>
+                    <div class="gh-title">
+                        <%- category.name %>
+                        <div class="randomMovieRelated">
+                            <div class="cinemapress-random-related"
+                                 onclick="window.location.href='<%- category.url %>?random'"
+                                 title="<%- page.l.random %>">
+                                <img src="/themes/tarly/public/images/dice.svg" alt="<%- page.l.random %>">
+                            </div>
+                        </div>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="goblock-content filter-result">
