@@ -18,7 +18,7 @@
             <div id="slider">
                 <div class="swiper-wrapper">
                     <% slider.forEach(function (movie) { %>
-                    <div class="swiper-slide" style="background-image: url(<%- movie.picture %>);">
+                    <div class="swiper-slide" style="background-image: url('<%- movie.picture %>');">
                         <a href="<%- movie.url %>" title="<%= movie.title %>" class="slide-link"></a>
                         <div class="slide-caption">
                             <p class="sc-name"><%= movie.title %></p>
@@ -54,9 +54,9 @@
                         <%- category.name %>
                         <div class="randomMovieIndex">
                             <div class="cinemapress-random-index"
-                                 onclick="window.location.href='<%- category.url %>?random'"
+                                 onclick="window.location.href='<%- (category.url.indexOf('?')+1 ? category.url + '&random' : category.url + '?random') %>'"
                                  title="<%- page.l.random %>">
-                                <img src="/themes/tarly/public/images/dice.svg" alt="<%- page.l.random %>">
+                                <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                             </div>
                         </div>
                     </div>

@@ -91,6 +91,9 @@
                                     <% if (movie.countries_url) { %>
                                     <div class="dcis dcis-04"><%- page.l.countries %>: <%- movie.countries_url %></div>
                                     <% } %>
+                                    <% if (movie.tags_url) { %>
+                                    <div class="dcis dcis-04"><%- page.l.tags %>: <%- movie.tags_url %></div>
+                                    <% } %>
                                 </div>
                                 <div class="dci-spe-right">
                                     <% if (movie.quality) { %>
@@ -152,7 +155,7 @@
                     <% contents.forEach(function (content) { %>
                     <div style="float: left; width: 50%;">
                         <div style="margin: 0; padding: 10px">
-                            <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+                            <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
                                 <div class="cinemapress-news-title">
                                     <%= content.title %>
                                 </div>
@@ -186,9 +189,9 @@
                         <%- category.name %>
                         <div class="randomMovieRelated">
                             <div class="cinemapress-random-related"
-                                 onclick="window.location.href='<%- category.url %>?random'"
+                                 onclick="window.location.href='<%- (category.url.indexOf('?')+1 ? category.url + '&random' : category.url + '?random') %>'"
                                  title="<%- page.l.random %>">
-                                <img src="/themes/tarly/public/images/dice.svg" alt="<%- page.l.random %>">
+                                <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                             </div>
                         </div>
                     </div>

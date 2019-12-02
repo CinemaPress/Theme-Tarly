@@ -20,7 +20,7 @@
                     <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
-                <div class="footer-logo"><img src="/themes/tarly/public/images/logo-footer.png" title="" alt=""></div>
+                <div class="footer-logo"><img src="/themes/<%- page.theme %>/public/images/logo-footer.png" title="" alt=""></div>
                 <div class="txt">
                     <span> &copy;&nbsp;<%- new Date().getFullYear() %>&nbsp;<a href="https://cinemapress.io" target="_blank">CinemaPress</a></span>
                     <p><span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
@@ -42,5 +42,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/themes/tarly/public/js/all.min.js"></script>
+<script type="text/javascript" src="/themes/<%- page.theme %>/public/js/all.min.js"></script>
 <%- page.codes.footer %>
