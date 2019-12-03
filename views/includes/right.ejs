@@ -11,6 +11,40 @@
         </div>
     </div>
 
+    <% if (typeof index === 'object') {
+            for (var type in index) {
+    if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+    index[type].forEach(function (category) { %>
+
+    <div class="goblock sb-watched">
+        <div class="goblock-header">
+            <div class="gh-title"><%- category.name %></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="goblock-content sbw-content">
+            <ul class="ulclear list-item sb-list-item watched-list" style="overflow: hidden;">
+                <% if (category.movies.length) {
+                category.movies.forEach(function (movie) { %>
+                    <li>
+                        <div class="block sbw-show">
+                            <a href="<%- movie.url %>" title="<%= movie.title %>" class="thumb">
+                                <img src="<%- movie.poster_min %>" title="<%= movie.title %>" alt="<%= movie.title %>">
+                            </a>
+                            <div class="item-detail">
+                                <h2 class="item-title"><a href="<%- movie.url %>" title="<%= movie.title %>"><%- movie.title %></a></h2>
+                                <div class="item-oinfo"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } %> <span class="dot"></span> <% if (movie.translate) { %><%- movie.translate %><% } %></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </li>
+                <% }); } %>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <% }); } } } %>
+
     <% if (typeof top === 'object' && top.length) { %>
     <div class="goblock sb-requested">
         <div class="goblock-content go-full">
