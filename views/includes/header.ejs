@@ -4,12 +4,12 @@
         <div id="m-menu"><i class="icon-menu"></i></div>
         <div id="m-search"><i class="icon-search"></i></div>
 
-        <a href="/" id="logo" title="Logo"><img src="/themes/<%- page.theme %>/public/images/logo.png?v=<%- page.ver %>" title="Logo" alt="Logo"></a>
+        <a href="/" id="logo" title="Logo"><img src="/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>" title="Logo" alt="Logo"></a>
 
         <form id="search" action="/<%- page.urls.search %>">
             <div class="search-content">
                 <input maxlength="50" type="text" class="form-control search-input" name="q" placeholder="<%- page.l.search %>..." data-autocomplete="desktop">
-                <button type="submit" class="search-submit" title="<%- page.l.search %>"><i class="icon-search"></i></button>
+                <button type="submit" class="search-submit" title="<%= page.l.search %>"><i class="icon-search"></i></button>
                 <div style="display: none;" class="search-suggest"></div>
                 <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
             </div>
@@ -25,7 +25,7 @@
             <div class="login-status">
                 <div class="header-login guest cinemapress-random-menu">
                     <a href="/?random" class="btn btn-sm btn-login">
-                        <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.lucky %>">
+                        <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.lucky %>">
                         <%- page.l.lucky %>
                     </a>
                 </div>
@@ -40,43 +40,43 @@
         <ul class="top-menu">
             <li><a href="/"><%- page.l.home %></a></li>
             <li>
-                <a href="javascript:void(0)" title="<%- page.l.years %>"><%- page.l.years %></a>
+                <a href="javascript:void(0)" title="<%= page.l.years %>"><%- page.l.years %></a>
                 <div class="sub-container" style="display: none;">
                     <ul class="sub-menu">
                         <% page.urls.years.forEach(function(year) { %>
-                        <li><a href="<%- year.url %>"><%- year.title %></a></li>
+                            <li><a href="<%- year.url %>"><%- year.title %></a></li>
                         <% }); %>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
             </li>
             <li>
-                <a href="javascript:void(0)" title="<%- page.l.genres %>"><%- page.l.genres %></a>
+                <a href="javascript:void(0)" title="<%= page.l.genres %>"><%- page.l.genres %></a>
                 <div class="sub-container" style="display: none;">
                     <ul class="sub-menu">
                         <% page.urls.genres.forEach(function(genre) { %>
-                        <li><a href="<%- genre.url %>"><%- genre.title %></a></li>
+                            <li><a href="<%- genre.url %>"><%- genre.title %></a></li>
                         <% }); %>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
             </li>
             <li>
-                <a href="javascript:void(0)" title="<%- page.l.countries %>"><%- page.l.countries %></a>
+                <a href="javascript:void(0)" title="<%= page.l.countries %>"><%- page.l.countries %></a>
                 <div class="sub-container" style="display: none;">
                     <ul class="sub-menu">
                         <% page.urls.countries.forEach(function(country) { %>
-                        <li><a href="<%- country.url %>"><%- country.title %></a></li>
+                            <li><a href="<%- country.url %>"><%- country.title %></a></li>
                         <% }); %>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
             </li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" title="<%- page.l.movies %>"><%- page.l.movies %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>" title="<%- page.l.series %>"><%- page.l.series %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>" title="<%- page.l.cartoons %>"><%- page.l.cartoons %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" title="<%- page.l.tv %>"><%- page.l.tv %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>" title="<%- page.l.anime %>"><%- page.l.anime %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" title="<%= page.l.movies %>"><%- page.l.movies %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>" title="<%= page.l.series %>"><%- page.l.series %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>" title="<%= page.l.cartoons %>"><%- page.l.cartoons %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" title="<%= page.l.tv %>"><%- page.l.tv %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>" title="<%= page.l.anime %>"><%- page.l.anime %></a></li>
         </ul>
         <div class="clearfix"></div>
     </div>
