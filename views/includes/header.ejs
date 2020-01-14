@@ -24,7 +24,7 @@
         <div class="randomMovieMenu">
             <div class="login-status">
                 <div class="header-login guest cinemapress-random-menu">
-                    <a href="/?random" class="btn btn-sm btn-login">
+                    <a href="/?random=<%- Math.random() %>" class="btn btn-sm btn-login">
                         <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.lucky %>">
                         <%- page.l.lucky %>
                     </a>
