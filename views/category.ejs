@@ -15,6 +15,27 @@
 
         <div id="main-content">
 
+            <% if (typeof top === 'object' && top.length) { %>
+                <div id="slider">
+                    <div class="swiper-wrapper">
+                        <% top.forEach(function (movie) { %>
+                            <div class="swiper-slide" style="background-image: url('<%- movie.picture %>');">
+                                <a href="<%- movie.url %>" title="<%= movie.title %>" class="slide-link"></a>
+                                <div class="slide-caption">
+                                    <p class="sc-name"><%= movie.title %></p>
+                                    <p class="sc-info"><span><%- movie.country_url %></span> <span><%- movie.genre_url %></span> <span><%- movie.year_url %></span> </p>
+                                    <a href="<%- movie.url %>" class="btn btn-go"><i class="icon-play mr10"></i><%- page.l.more %></a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="clearfix"></div>
+                </div>
+            <% } %>
+
+            <div class="clearfix"></div>
+
             <% if (typeof page.adv === 'object' && page.adv.top) { %>
                 <div style="text-align: center; margin: 10px auto">
                     <%- page.adv.top %>

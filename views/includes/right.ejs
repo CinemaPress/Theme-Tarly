@@ -23,9 +23,10 @@
             </div>
             <div class="goblock-content sbw-content">
                 <ul class="ulclear list-item sb-list-item watched-list" style="overflow: hidden;">
+                    <% var moreEpisodes = false; %>
                     <% if (category.movies.length) {
                     category.movies.forEach(function (movie) { %>
-                        <li>
+                        <li <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
                             <div class="block sbw-show">
                                 <a href="<%- movie.url %>" title="<%= movie.title %>" class="thumb">
                                     <img src="<%- movie.poster_min %>" title="<%= movie.title %>" alt="<%= movie.title %>">
@@ -39,6 +40,9 @@
                         </li>
                     <% }); } %>
                 </ul>
+                <% if (moreEpisodes) { %>
+                    <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                <% } %>
                 <div class="clearfix"></div>
             </div>
         </div>
