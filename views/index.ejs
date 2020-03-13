@@ -22,8 +22,10 @@
                                 <a href="<%- movie.url %>" title="<%= movie.title %>" class="slide-link"></a>
                                 <div class="slide-caption">
                                     <p class="sc-name"><%= movie.title %></p>
-                                    <p class="sc-info"><span><%- movie.country_url %></span> <span><%- movie.genre_url %></span> <span><%- movie.year_url %></span> </p>
-                                    <a href="<%- movie.url %>" class="btn btn-go"><i class="icon-play mr10"></i><%- page.l.more %></a>
+                                    <p class="sc-info"><span><%- movie.country_url %></span>
+                                        <span><%- movie.genre_url %></span> <span><%- movie.year_url %></span></p>
+                                    <a href="<%- movie.url %>" class="btn btn-go"><i
+                                                class="icon-play mr10"></i><%- page.l.more %></a>
                                 </div>
                             </div>
                         <% }); %>
@@ -53,10 +55,13 @@
                         <div class="gh-title">
                             <%- category.name %>
                             <div class="randomMovieIndex">
-                                <div <% if (!category.url) { %>style="display:none"<% } %> class="cinemapress-random-index"
-                                     onclick="window.location.href='<%- (category.url && category.url.indexOf('?')+1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
+                                <div <% if (!category.url) { %>style="display:none"
+                                        <% } %>
+                                     class="cinemapress-random-index"
+                                     onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                      title="<%= page.l.random %>">
-                                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.random %>">
+                                    <img src="/themes/<%- page.theme %>/public/images/dice.svg"
+                                         alt="<%= page.l.random %>">
                                 </div>
                             </div>
                         </div>
@@ -77,11 +82,16 @@
                                         <% if (movie.quality) { %>
                                             <div class="gr-quality"><%- movie.quality %></div>
                                         <% } %>
-                                        <img src="<%- movie.poster %>" title="<%= movie.title %>" alt="<%= movie.title %>">
+                                        <img src="<%- movie.poster %>" title="<%= movie.title %>"
+                                             alt="<%= movie.title %>">
                                     </a>
                                     <div class="item-detail">
                                         <h2 class="item-title">
-                                            <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a>
+                                            <a href="<%- movie.url %>"><%= movie.title %> (
+                                                <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
+                                                <% } else { %><%- movie.year %>
+                                                <% } %>
+                                                )</a>
                                         </h2>
                                     </div>
                                     <div class="clearfix"></div>
@@ -110,7 +120,8 @@
                     <nav>
                         <ul class="pagination">
                             <% if (page.pagination.first) { %>
-                                <li><a href="<%- page.pagination.first.link %>" rel="nofollow"><%- page.pagination.first.number %></a></li>
+                                <li><a href="<%- page.pagination.first.link %>"
+                                       rel="nofollow"><%- page.pagination.first.number %></a></li>
                                 <li class="active"><a href="javascript:void(0)">...</a></li>
                             <% } %>
                             <% if (page.pagination.prev.length) { %>
@@ -126,7 +137,8 @@
                             <% } %>
                             <% if (page.pagination.last) { %>
                                 <li class="active"><a href="javascript:void(0)">...</a></li>
-                                <li><a href="<%- page.pagination.last.link %>" rel="nofollow"><%- page.pagination.last.number %></a></li>
+                                <li><a href="<%- page.pagination.last.link %>"
+                                       rel="nofollow"><%- page.pagination.last.number %></a></li>
                             <% } %>
                         </ul>
                     </nav>

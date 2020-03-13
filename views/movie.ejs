@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="<%- page.language %>" prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/">
+<html lang="<%- page.language %>"
+      prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/">
 <head>
 
     <%- include('includes/head.ejs'); -%>
@@ -26,7 +27,9 @@
                 <div class="gobread">
                     <ol class="breadcrumb">
                         <li><a href="/"><%- page.l.home %></a></li>
-                        <% if (movie.genre_url) { %><li><%- movie.genre_url %></li><% } %>
+                        <% if (movie.genre_url) { %>
+                            <li><%- movie.genre_url %></li>
+                        <% } %>
                         <li class="active"><%= movie.title %></li>
                     </ol>
                 </div>
@@ -45,18 +48,23 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="goblock-bottom gocontrol">
-                        <a href="<%- movie.url %>" class="gc-icon"><i class="icon-info mr5"></i><%- page.l.information %></a>
+                        <a href="<%- movie.url %>" class="gc-icon"><i
+                                    class="icon-info mr5"></i><%- page.l.information %></a>
                         <% if (page.urls.movies.online) { %>
-                            <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="gc-icon gc-trailer"><i class="icon-play mr5"></i><%- page.l.online %></a>
+                            <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="gc-icon gc-trailer"><i
+                                        class="icon-play mr5"></i><%- page.l.online %></a>
                         <% } %>
                         <% if (page.urls.movies.download) { %>
-                            <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="gc-icon gc-trailer"><i class="icon-download mr5"></i><%- page.l.download %></a>
+                            <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="gc-icon gc-trailer"><i
+                                        class="icon-download mr5"></i><%- page.l.download %></a>
                         <% } %>
                         <% if (page.urls.movies.trailer) { %>
-                            <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="gc-icon gc-trailer"><i class="icon-video mr5"></i><%- page.l.trailer %></a>
+                            <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="gc-icon gc-trailer"><i
+                                        class="icon-video mr5"></i><%- page.l.trailer %></a>
                         <% } %>
                         <% if (page.urls.movies.picture) { %>
-                            <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="gc-icon gc-trailer"><i class="icon-gallery mr5"></i><%- page.l.picture %></a>
+                            <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="gc-icon gc-trailer"><i
+                                        class="icon-gallery mr5"></i><%- page.l.picture %></a>
                         <% } %>
                         <div class="clearfix"></div>
                     </div>
@@ -72,7 +80,8 @@
                 <div class="goblock-content go-full">
                     <div class="detail-content">
                         <div class="dc-thumb">
-                            <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>" data-cinemapress-poster="<%- movie.poster %>">
+                            <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>"
+                                 data-cinemapress-poster="<%- movie.poster %>">
                         </div>
                         <div class="dc-info">
                             <h1 class="dc-title"><%- page.h1 %></h1>
@@ -85,10 +94,12 @@
                                         <div class="dcis dcis-02"><%- page.l.actors %>: <%- movie.actors_url %></div>
                                     <% } %>
                                     <% if (movie.directors_url) { %>
-                                        <div class="dcis dcis-03"><%- page.l.directors %>: <%- movie.directors_url %></div>
+                                        <div class="dcis dcis-03"><%- page.l.directors %>
+                                            : <%- movie.directors_url %></div>
                                     <% } %>
                                     <% if (movie.countries_url) { %>
-                                        <div class="dcis dcis-04"><%- page.l.countries %>: <%- movie.countries_url %></div>
+                                        <div class="dcis dcis-04"><%- page.l.countries %>
+                                            : <%- movie.countries_url %></div>
                                     <% } %>
                                     <% if (movie.tags_url) { %>
                                         <div class="dcis dcis-04"><%- page.l.tags %>: <%- movie.tags_url %></div>
@@ -96,10 +107,12 @@
                                 </div>
                                 <div class="dci-spe-right">
                                     <% if (movie.quality) { %>
-                                        <div class="dcis dcis-02"><%- page.l.quality %>: <span class="badge"><%- movie.quality %></span></div>
+                                        <div class="dcis dcis-02"><%- page.l.quality %>: <span
+                                                    class="badge"><%- movie.quality %></span></div>
                                     <% } %>
                                     <% if (movie.translate) { %>
-                                        <div class="dcis dcis-02" style="overflow: hidden;"><span class="badge"><%- movie.translate %></span></div>
+                                        <div class="dcis dcis-02" style="overflow: hidden;"><span
+                                                    class="badge"><%- movie.translate %></span></div>
                                     <% } %>
                                     <% if (movie.premiere) { %>
                                         <div class="dcis dcis-03"><%- page.l.premiere %>: <%- movie.premiere %></div>
@@ -115,12 +128,14 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="dc-right">
-                            <a class="btn btn-block btn-fav favorite watchLaterBlock" href="javascript:void(0)" style="display: none;" id="watchLater"><%- page.l.later %></a>
+                            <a class="btn btn-block btn-fav favorite watchLaterBlock" href="javascript:void(0)"
+                               style="display: none;" id="watchLater"><%- page.l.later %></a>
                             <% if (movie.kp_rating) { %>
                                 <div class="dcr-rating">
-                                    <strong><%- page.l.kp %></strong> <strong><%- movie.kp_rating/10 %></strong> (<%- movie.kp_vote %>)
+                                    <strong><%- page.l.kp %></strong> <strong><%- movie.kp_rating / 10 %></strong>
+                                    (<%- movie.kp_vote %>)
                                     <div class="dcrrkp">
-                                        <% for (var i = 1; i <= Math.round(movie.kp_rating/10); i++) { %>
+                                        <% for (var i = 1; i <= Math.round(movie.kp_rating / 10); i++) { %>
                                             <span class="fa fa-star"></span>
                                         <% } %>
                                     </div>
@@ -128,9 +143,10 @@
                             <% } %>
                             <% if (movie.imdb_rating) { %>
                                 <div class="dcr-rating">
-                                    <strong><%- page.l.imdb %></strong> <strong><%- movie.imdb_rating/10 %></strong> (<%- movie.imdb_vote %>)
+                                    <strong><%- page.l.imdb %></strong> <strong><%- movie.imdb_rating / 10 %></strong>
+                                    (<%- movie.imdb_vote %>)
                                     <div class="dcrrimdb">
-                                        <% for (var i = 1; i <= Math.round(movie.imdb_rating/10); i++) { %>
+                                        <% for (var i = 1; i <= Math.round(movie.imdb_rating / 10); i++) { %>
                                             <span class="fa fa-star"></span>
                                         <% } %>
                                     </div>
@@ -157,7 +173,8 @@
                         <% contents.forEach(function (content) { %>
                             <div style="float: left; width: 50%;">
                                 <div style="margin: 0; padding: 10px">
-                                    <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                                    <a href="<%- content.url %>" class="cinemapress-news"
+                                       style="background-image:url('<%- content.image %>');">
                                         <div class="cinemapress-news-title">
                                             <%= content.title %>
                                         </div>
@@ -193,23 +210,34 @@
                                 <div class="cinemapress-comment-form">
                                     <% if (comments.config.bb_codes) { %>
                                         <div class="cinemapress-comment-form-bb">
-                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-b" data-bb-code="b"><%- page.l.bold.toLowerCase() %></span>
-                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-i" data-bb-code="i"><%- page.l.italic.toLowerCase() %></span>
-                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-spoiler" data-bb-code="spoiler">👻 <%- page.l.spoiler.toLowerCase() %></span>
-                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-search" data-bb-code="search">🔍 <%- page.l.search.toLowerCase() %></span>
-                                            <input class="cinemapress-comment-bg cinemapress-comment-form-anonymous" name="comment_anonymous" type="text" placeholder="<%- page.l.username %>">
+                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-b"
+                                                  data-bb-code="b"><%- page.l.bold.toLowerCase() %></span>
+                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-i"
+                                                  data-bb-code="i"><%- page.l.italic.toLowerCase() %></span>
+                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-spoiler"
+                                                  data-bb-code="spoiler">👻 <%- page.l.spoiler.toLowerCase() %></span>
+                                            <span class="cinemapress-comment-bg cinemapress-comment-form-bb-search"
+                                                  data-bb-code="search">🔍 <%- page.l.search.toLowerCase() %></span>
+                                            <input class="cinemapress-comment-bg cinemapress-comment-form-anonymous"
+                                                   name="comment_anonymous" type="text"
+                                                   placeholder="<%- page.l.username %>">
                                         </div>
                                     <% } %>
                                     <div>
                                         <div class="cinemapress-comment-textarea-div">
-                                            <textarea name="comment_text" class="cinemapress-comment-bg cinemapress-comment-textarea" placeholder="<%- page.l.comment %>" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+                                            <textarea name="comment_text"
+                                                      class="cinemapress-comment-bg cinemapress-comment-textarea"
+                                                      placeholder="<%- page.l.comment %>" autocomplete="off"
+                                                      autocapitalize="off" spellcheck="false"></textarea>
                                             <div class="cinemapress-comment-form-bg"></div>
-                                            <div class="cinemapress-comment-button-bg hover-off" data-comment-type="submit">
+                                            <div class="cinemapress-comment-button-bg hover-off"
+                                                 data-comment-type="submit">
                                                 <span class="cinemapress-comment-button-text"></span>
                                             </div>
                                         </div>
                                         <% if (comments.config.question) { %>
-                                            <div class="cinemapress-comment-bg cinemapress-comment-question" style="display: none">
+                                            <div class="cinemapress-comment-bg cinemapress-comment-question"
+                                                 style="display: none">
                                                 <div class="cinemapress-comment-question-text"><%- comments.config.question %></div>
                                                 <div class="cinemapress-comment-question-answer">
                                                     <% if (comments.config.question_yes) { %>
@@ -220,23 +248,32 @@
                                                     <% } %>
                                                 </div>
                                                 <% if (comments.config.question_yes) { %>
-                                                    <div class="cinemapress-comment-question-text-yes" style="display: none">
+                                                    <div class="cinemapress-comment-question-text-yes"
+                                                         style="display: none">
                                                         <%- comments.config.question_yes %>
                                                     </div>
                                                 <% } %>
                                                 <% if (comments.config.question_not) { %>
-                                                    <div class="cinemapress-comment-question-text-not" style="display: none">
+                                                    <div class="cinemapress-comment-question-text-not"
+                                                         style="display: none">
                                                         <%- comments.config.question_not %>
                                                     </div>
                                                 <% } %>
                                                 <div class="cinemapress-comment-question-bg"></div>
                                                 <% if (comments.config.question_poster) { %>
-                                                    <div class="cinemapress-comment-question-bg-poster" style="background-image:url('<%- comments.config.question_poster %>')"></div>
+                                                    <div class="cinemapress-comment-question-bg-poster"
+                                                         style="background-image:url('<%- comments.config.question_poster %>')"></div>
                                                 <% } %>
                                             </div>
                                         <% } %>
                                     </div>
-                                    <div style="font-size:8px;text-align:right;opacity:.2">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" style="font-size:8px" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" style="font-size:8px" target="_blank">Terms of Service</a> apply.</div>
+                                    <div style="font-size:8px;text-align:right;opacity:.2">This site is protected by
+                                        reCAPTCHA and the Google <a href="https://policies.google.com/privacy"
+                                                                    style="font-size:8px" target="_blank">Privacy
+                                            Policy</a> and <a href="https://policies.google.com/terms"
+                                                              style="font-size:8px" target="_blank">Terms of Service</a>
+                                        apply.
+                                    </div>
                                 </div>
                                 <%- comments.indexer ? comments.indexer : '' %>
                                 <% if (comments.list && comments.list.length) { %>
@@ -263,26 +300,38 @@
                                                 <% } %>
                                                 <div class="cinemapress-comment-head-meta">
                                                     <div class="cinemapress-comment-head-meta-vote">
-                                                        <span class="cinemapress-comment-like" data-comment-type="like" data-comment-id="<%- comment.id %>" title="<%= page.l.like %>">
+                                                        <span class="cinemapress-comment-like" data-comment-type="like"
+                                                              data-comment-id="<%- comment.id %>"
+                                                              title="<%= page.l.like %>">
                                                             <span class="cinemapress-comment-like-icon"></span>
                                                             <span class="cinemapress-comment-like-number"><%- comment.like %></span>
                                                         </span>
-                                                        <span class="cinemapress-comment-dislike" data-comment-type="dislike" data-comment-id="<%- comment.id %>" title="<%= page.l.dislike %>">
+                                                        <span class="cinemapress-comment-dislike"
+                                                              data-comment-type="dislike"
+                                                              data-comment-id="<%- comment.id %>"
+                                                              title="<%= page.l.dislike %>">
                                                             <span class="cinemapress-comment-dislike-number"><%- comment.dislike %></span>
                                                             <span class="cinemapress-comment-dislike-icon"></span>
                                                         </span>
-                                                        <span class="cinemapress-comment-reply" data-reply-id="<%- comment.id %>" data-bb-code="b" data-bb-value="<%- comment.user %>" title="<%= page.l.reply %>">
+                                                        <span class="cinemapress-comment-reply"
+                                                              data-reply-id="<%- comment.id %>" data-bb-code="b"
+                                                              data-bb-value="<%- comment.user %>"
+                                                              title="<%= page.l.reply %>">
                                                             <span class="cinemapress-comment-reply-icon"></span>
                                                         </span>
                                                     </div>
-                                                    <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
+                                                    <div class="cinemapress-comment-user"
+                                                         data-comment-id="<%- comment.id %>">
                                                         <div class="cinemapress-comment-user-name">
                                                             <%- comment.user %>
-                                                        </div><div class="cinemapress-comment-user-said">
+                                                        </div>
+                                                        <div class="cinemapress-comment-user-said">
                                                             <%- page.l.said %>
-                                                        </div><div class="cinemapress-comment-user-date">
+                                                        </div>
+                                                        <div class="cinemapress-comment-user-date">
                                                             <%- comment.date %>
-                                                        </div><div class="cinemapress-comment-user-link">
+                                                        </div>
+                                                        <div class="cinemapress-comment-user-link">
                                                             <a href="<%- comment.url %>#c<%- comment.id %>">#</a>
                                                         </div>
                                                     </div>
@@ -305,10 +354,12 @@
                             <% } %>
                             <div class="cinemapress-comment-arrow">
                                 <% if (comments && comments.prev) { %>
-                                    <div class="cinemapress-prev-comments" onclick="window.location.href='?page=<%- comments.prev %>#cinemapress-comments'"></div>
+                                    <div class="cinemapress-prev-comments"
+                                         onclick="window.location.href='?page=<%- comments.prev %>#cinemapress-comments'"></div>
                                 <% } %>
                                 <% if (comments && comments.next) { %>
-                                    <div class="cinemapress-next-comments" onclick="window.location.href='?page=<%- comments.next %>#cinemapress-comments'"></div>
+                                    <div class="cinemapress-next-comments"
+                                         onclick="window.location.href='?page=<%- comments.next %>#cinemapress-comments'"></div>
                                 <% } %>
                             </div>
                         </div>
@@ -327,29 +378,38 @@
                             <%- category.name %>
                             <div class="randomMovieRelated">
                                 <div class="cinemapress-random-related"
-                                     onclick="window.location.href='<%- (category.url && category.url.indexOf('?')+1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
+                                     onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                      title="<%= page.l.random %>">
-                                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.random %>">
+                                    <img src="/themes/<%- page.theme %>/public/images/dice.svg"
+                                         alt="<%= page.l.random %>">
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="goblock-content filter-result">
-                        <ul class="ulclear grid-item grid-item-featured"><% if (category.movies.length) {
-                            category.movies.forEach(function (movie) { %><li>
-                                <a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)" class="thumb">
-                                    <div class="gi-play"><i class="icon-play"></i></div>
-                                    <% if (movie.quality) { %>
-                                        <div class="gr-quality"><%- movie.quality %></div>
-                                    <% } %>
-                                    <img src="<%- movie.poster %>" title="<%= movie.title %> (<%- movie.year %>)" alt="<%= movie.title %> (<%- movie.year %>)">
-                                </a>
-                                <div class="item-detail">
-                                    <h2 class="item-title"><a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"><%= movie.title %></a></h2>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li><% }); } %></ul>
+                        <ul class="ulclear grid-item grid-item-featured">
+                            <% if (category.movies.length) {
+                            category.movies.forEach(function (movie) { %>
+                                <li>
+                                    <a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"
+                                       class="thumb">
+                                        <div class="gi-play"><i class="icon-play"></i></div>
+                                        <% if (movie.quality) { %>
+                                            <div class="gr-quality"><%- movie.quality %></div>
+                                        <% } %>
+                                        <img src="<%- movie.poster %>" title="<%= movie.title %> (<%- movie.year %>)"
+                                             alt="<%= movie.title %> (<%- movie.year %>)">
+                                    </a>
+                                    <div class="item-detail">
+                                        <h2 class="item-title"><a href="<%- movie.url %>"
+                                                                  title="<%= movie.title %> (<%- movie.year %>)"><%= movie.title %></a>
+                                        </h2>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            <% }); } %>
+                        </ul>
                         <div class="clearfix"></div>
                     </div>
                 </div>

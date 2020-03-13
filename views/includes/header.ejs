@@ -4,12 +4,15 @@
         <div id="m-menu"><i class="icon-menu"></i></div>
         <div id="m-search"><i class="icon-search"></i></div>
 
-        <a href="/" id="logo" title="Logo"><img src="/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>" title="Logo" alt="Logo"></a>
+        <a href="/" id="logo" title="Logo"><img src="/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>"
+                                                title="Logo" alt="Logo"></a>
 
         <form id="search" action="/<%- page.urls.search %>">
             <div class="search-content">
-                <input maxlength="50" type="text" class="form-control search-input" name="q" placeholder="<%- page.l.search %>..." data-autocomplete="desktop">
-                <button type="submit" class="search-submit" title="<%= page.l.search %>"><i class="icon-search"></i></button>
+                <input maxlength="50" type="text" class="form-control search-input" name="q"
+                       placeholder="<%- page.l.search %>..." data-autocomplete="desktop">
+                <button type="submit" class="search-submit" title="<%= page.l.search %>"><i class="icon-search"></i>
+                </button>
                 <div style="display: none;" class="search-suggest"></div>
                 <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
             </div>
@@ -17,7 +20,8 @@
 
         <div class="login-status continueViewingBlock" style="display: none;">
             <div class="header-login guest">
-                <a href="javascript:void(0)" class="btn btn-sm btn-login" id="continueViewing"><i class="icon-play mr5"></i><%- page.l.continue %>?</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-login" id="continueViewing"><i
+                            class="icon-play mr5"></i><%- page.l.continue %>?</a>
             </div>
         </div>
 
@@ -72,11 +76,16 @@
                     <div class="clearfix"></div>
                 </div>
             </li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" title="<%= page.l.movies %>"><%- page.l.movies %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>" title="<%= page.l.series %>"><%- page.l.series %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>" title="<%= page.l.cartoons %>"><%- page.l.cartoons %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" title="<%= page.l.tv %>"><%- page.l.tv %></a></li>
-            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>" title="<%= page.l.anime %>"><%- page.l.anime %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"
+                   title="<%= page.l.movies %>"><%- page.l.movies %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"
+                   title="<%= page.l.series %>"><%- page.l.series %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>"
+                   title="<%= page.l.cartoons %>"><%- page.l.cartoons %></a></li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" title="<%= page.l.tv %>"><%- page.l.tv %></a>
+            </li>
+            <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>"
+                   title="<%= page.l.anime %>"><%- page.l.anime %></a></li>
         </ul>
         <div class="clearfix"></div>
     </div>
