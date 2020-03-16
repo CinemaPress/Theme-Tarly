@@ -87,11 +87,7 @@
                                     </a>
                                     <div class="item-detail">
                                         <h2 class="item-title">
-                                            <a href="<%- movie.url %>"><%= movie.title %> (
-                                                <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
-                                                <% } else { %><%- movie.year %>
-                                                <% } %>
-                                                )</a>
+                                            <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a>
                                         </h2>
                                     </div>
                                     <div class="clearfix"></div>
