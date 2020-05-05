@@ -27,7 +27,7 @@
             <div class="goblock-content sbw-content">
                 <ul class="ulclear list-item sb-list-item watched-list" style="overflow: hidden;">
                     <% var moreEpisodes = false; %>
-                    <% if (category.movies.length) {
+                    <% if (typeof category === 'object' && category.movies && category.movies.length) {
                     category.movies.forEach(function (movie) { %>
                         <li <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"
                                 <% } %>

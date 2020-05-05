@@ -381,7 +381,7 @@
                     </div>
                     <div class="goblock-content filter-result">
                         <ul class="ulclear grid-item grid-item-featured">
-                            <% if (category.movies.length) {
+                            <% if (typeof category === 'object' && category.movies && category.movies.length) {
                             category.movies.forEach(function (movie) { %>
                                 <li>
                                     <a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"
