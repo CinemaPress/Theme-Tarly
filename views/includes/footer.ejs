@@ -64,18 +64,37 @@
 </div>
 
 <script>
-    window.addEventListener('DOMContentLoaded', function(e) {
-      var dataCinemaSrc = document.querySelectorAll('[data-cinemapress-src]');
-      if (!dataCinemaSrc) return;
-      dataCinemaSrc.forEach(function(cinemaSrc) {
-        cinemaSrc.src = cinemaSrc.dataset.cinemaSrc;
+  window.addEventListener('DOMContentLoaded', function() {
+    var dataCinemapressSrc = document.querySelectorAll('[data-cinemapress-src]');
+    if (dataCinemapressSrc) {
+      dataCinemapressSrc.forEach(function(cinemapressSrc) {
+        if (cinemapressSrc.complete) {
+          cinemapressSetImage(cinemapressSrc, 'cinemapressSrc');
+        } else {
+          cinemapressSrc.addEventListener('load', function() {
+            cinemapressSetImage(cinemapressSrc, 'cinemapressSrc');
+          }, { once: true });
+        }
       });
-      var dataCinemaBgSrc = document.querySelectorAll('[data-cinemapress-bg-src]');
-      if (!dataCinemaBgSrc) return;
-      dataCinemaBgSrc.forEach(function(cinemaBgSrc) {
-        cinemaBgSrc.style.backgroundImage = 'url("' + cinemaBgSrc.dataset.cinemaBgSrc + '")';
+    }
+    var dataCinemapressBgSrc = document.querySelectorAll('[data-cinemapress-bg-src]');
+    if (dataCinemapressBgSrc) {
+      dataCinemapressBgSrc.forEach(function(cinemapressBgSrc) {
+        cinemapressSetImage(cinemapressBgSrc, 'cinemapressBgSrc');
       });
-    });
+    }
+    function cinemapressSetImage(elem, name) {
+      var img = new Image();
+      img.src = elem.dataset[name];
+      img.onload = function() {
+        if (name === 'cinemapressBgSrc') {
+          elem.style.backgroundImage = 'url("' + elem.dataset[name] + '")';
+        } else {
+          elem.src = elem.dataset[name];
+        }
+      }
+    }
+  });
 </script>
 
 <script type="text/javascript" src="/themes/<%- page.theme %>/public/js/all.min.js"></script>
