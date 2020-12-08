@@ -70,7 +70,7 @@
                     <% top.forEach(function (movie) { %>
                         <li>
                             <a href="<%- movie.url %>" title="<%= movie.title %>" class="thumb"><img
-                                        src="<%- movie.poster %>" title="<%= movie.title %>"
+                                        src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" title="<%= movie.title %>"
                                         alt="<%= movie.title %>"></a>
                             <div class="item-detail">
                                 <h2 class="item-title"><a href="<%- movie.url %>"

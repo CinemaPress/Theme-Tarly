@@ -62,5 +62,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function(e) {
+      var dataCinemaSrc = document.querySelectorAll('[data-cinemapress-src]');
+      if (!dataCinemaSrc) return;
+      dataCinemaSrc.forEach(function(cinemaSrc) {
+        cinemaSrc.src = cinemaSrc.dataset.cinemaSrc;
+      });
+      var dataCinemaBgSrc = document.querySelectorAll('[data-cinemapress-bg-src]');
+      if (!dataCinemaBgSrc) return;
+      dataCinemaBgSrc.forEach(function(cinemaBgSrc) {
+        cinemaBgSrc.style.backgroundImage = 'url("' + cinemaBgSrc.dataset.cinemaBgSrc + '")';
+      });
+    });
+</script>
+
 <script type="text/javascript" src="/themes/<%- page.theme %>/public/js/all.min.js"></script>
 <%- page.codes.footer %>
