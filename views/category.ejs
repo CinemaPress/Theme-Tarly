@@ -19,7 +19,7 @@
                 <div id="slider">
                     <div class="swiper-wrapper">
                         <% top.forEach(function (movie) { %>
-                            <div class="swiper-slide" style="background-image: url('<%- movie.picture_min %>');" data-cinemapress-bg-src="<%- movie.picture %>">
+                            <div class="lazy swiper-slide" style="background-image: url('<%- movie.picture_min %>');" data-bg="<%- movie.picture %>">
                                 <a href="<%- movie.url %>" title="<%= movie.title %>" class="slide-link"></a>
                                 <div class="slide-caption">
                                     <p class="sc-name"><%= movie.title %></p>
@@ -118,7 +118,7 @@
                                         <% if (movie.quality) { %>
                                             <div class="gr-quality"><%- movie.quality %></div>
                                         <% } %>
-                                        <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" title="<%= movie.title %>"
+                                        <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" title="<%= movie.title %>"
                                              alt="<%= movie.title %>">
                                     </a>
                                     <div class="item-detail">

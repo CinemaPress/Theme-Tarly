@@ -83,7 +83,7 @@
                 <div class="goblock-content go-full">
                     <div class="detail-content">
                         <div class="dc-thumb">
-                            <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>"
+                            <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>"
                                  data-cinemapress-poster="<%- movie.poster %>">
                         </div>
                         <div class="dc-info">
@@ -396,7 +396,7 @@
                                         <% if (movie.quality) { %>
                                             <div class="gr-quality"><%- movie.quality %></div>
                                         <% } %>
-                                        <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" title="<%= movie.title %> (<%- movie.year %>)"
+                                        <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" title="<%= movie.title %> (<%- movie.year %>)"
                                              alt="<%= movie.title %> (<%- movie.year %>)">
                                     </a>
                                     <div class="item-detail">
