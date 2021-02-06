@@ -18,7 +18,7 @@
                 <div id="slider">
                     <div class="swiper-wrapper">
                         <% slider.forEach(function (movie) { %>
-                            <div class="lazy swiper-slide" style="background-image: url('<%- movie.picture_min %>');" data-bg="<%- movie.picture %>">
+                            <div class="lazy swiper-slide" style="background-image: url('<%- movie.picture_min %>');" data-bg="<%- movie.picture_big %>">
                                 <a href="<%- movie.url %>" title="<%= movie.title %>" class="slide-link"></a>
                                 <div class="slide-caption">
                                     <p class="sc-name"><%= movie.title %></p>
