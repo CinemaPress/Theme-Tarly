@@ -1,10 +1,10 @@
 # Theme «tarly»
 
-![Theme «tarly» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tarly/master/screenshot.png "Theme «tarly» for CinemaPress")
+![Theme «tarly» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tarly/master/screenshot.png)
 
 :art: Theme «tarly» for CinemaPress
 
-- [Tarly.CinemaPress.io](http://Tarly.CinemaPress.io/)
+- `«tarly»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Tarly/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Tarly/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-tarly/get/master.zip)
